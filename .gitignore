@@ -1,0 +1,16 @@
+
+# Zależności Node.js (najważniejsze do zignorowania)
+node_modules/
+
+# Zmienne środowiskowe i sekrety
+.env
+*.env  # Ignoruje również np. .env.local gdybyś kiedyś takiego użył
+
+# Raporty Playwrighta i wyniki testów (generowane przy każdym uruchomieniu)
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# Pliki systemowe (np. z macOS)
+.DS_Store
