@@ -1,6 +1,6 @@
 import { test, expect } from '../fixtures/baseTest';
 
-test('Proces dodania do koszyka i przejścia na podsumowanie zamówienia', async ({ loginPage, inventoryPage, cartPage, checkoutPage, page }) => {
+test('Proces dodania do koszyka i przejścia na podsumowanie zamówienia', async ({ loginPage, inventoryPage, cartPage, checkoutPage, page, checkoutOverviewPage, checkoutCompletePage }) => {
     // Logowanie do aplikacji
     await loginPage.goto();
     await loginPage.login(
@@ -26,4 +26,13 @@ test('Proces dodania do koszyka i przejścia na podsumowanie zamówienia', async
     // Kontynuacja do następnego kroku
     await checkoutPage.clickContinueButton();
     await expect(page).toHaveURL('https://www.saucedemo.com/checkout-step-two.html');
+
+    // Sprawdzenie, czy jesteśmy na stronie podsumowania zamówienia
+    await checkoutOverviewPage.clickFinishButton();
+    await expect(page).toHaveURL('https://www.saucedemo.com/checkout-complete.html');
+
+    // Sprawdzenie, czy wyświetla się komunikat o zakończeniu zamówienia
+    expect(checkoutCompletePage.completeHeader).toHaveText('Thank you for your order!');
+    await checkoutCompletePage.clickBackHomeButton();
+    await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
 });
