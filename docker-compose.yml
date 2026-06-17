@@ -1,0 +1,7 @@
+services:
+  app:
+    image: mcr.microsoft.com/playwright:v1.60.0-jammy
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: npx playwright test

@@ -14,6 +14,6 @@ export class CheckoutCompletePage {
     }
 
     get completeHeader() {
-        return this.page.locator('[data-test="checkout-complete-header"]');
+        return this.page.locator('[data-test="complete-header"]');
     }
 }
