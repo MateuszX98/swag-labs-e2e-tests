@@ -1,4 +1,4 @@
-import { test, expect } from '../fixtures/baseTest';
+import { test, expect } from '../../fixtures/baseTest';
 
 test('Proces dodania do koszyka i przejścia na podsumowanie zamówienia', async ({ loginPage, inventoryPage, cartPage, checkoutPage, page, checkoutOverviewPage, checkoutCompletePage }) => {
     // Logowanie do aplikacji

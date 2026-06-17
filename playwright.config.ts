@@ -51,6 +51,24 @@ export default defineConfig({
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
     },
+    {
+      name: 'e2e',
+      testDir: './tests/e2e', // Wskazujemy konkretny folder z testami interfejsu
+      use: { 
+        ...devices['Desktop Chrome'],
+        // Możesz tu zdefiniować baseURL specyficzny dla E2E:
+        // baseURL: 'https://www.saucedemo.com',
+      },
+    },
+    {
+      name: 'api',
+      testDir: './tests/api', // Wskazujemy folder z testami backendowymi
+      use: {
+        // Testy API nie potrzebują przeglądarki, więc nie dziedziczymy z 'devices'
+        // Możesz tu zdefiniować bazowy URL dla endpointów:
+        // baseURL: 'https://reqres.in',
+      },
+    },
 
     /* Test against mobile viewports. */
     // {

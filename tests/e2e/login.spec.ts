@@ -1,4 +1,4 @@
-import { test, expect } from '../fixtures/baseTest';
+import { test, expect } from '../../fixtures/baseTest';
 
 test('Poprawne logowanie standardowego użytkownika z użyciem Fixture', async ({ page, loginPage }) => {
     // Przejdź do strony logowania

@@ -4,4 +4,4 @@ services:
     volumes:
       - .:/app
     working_dir: /app
-    command: npx playwright test
+    command: npx playwright test --project=e2e
